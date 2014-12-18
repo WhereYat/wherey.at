@@ -1,5 +1,5 @@
 var ready = function() {
-	var whereyat = new WhereYat();
+	$.whereyat();
 };
 
 jQuery(document).ready(ready);
