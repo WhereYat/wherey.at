@@ -1,7 +1,11 @@
+/*! Where Y'at - v0.1.0 - 2014-12-19
+* https://github.com/zshannon/whereyat
+* Copyright (c) 2014 Zane Shannon; Licensed MIT */
 (function($) {
   var WhereYat;
-  WhereYat = function(options) {
+  WhereYat = function(options, completionCallback) {
     this.options = $.extend({}, options);
+    this.completion = completionCallback;
     this.nodes = [];
     this.parse();
     this.render();
@@ -45,7 +49,7 @@
           lng: $el.data(_this.options.longitudeData)
         };
         userDistance = _this.distance(location, _this.location);
-        distanceClass = 'xl';
+        distanceClass = _this.options.maxDistance;
         _ref = _this.options.distances;
         for (klass in _ref) {
           distance = _ref[klass];
@@ -57,6 +61,9 @@
         return $el.addClass("" + _this.options.classPrefix + distanceClass);
       };
     })(this));
+    if (this.completion != null) {
+      this.completion();
+    }
   };
   WhereYat.prototype.distance = function(from, to, unit) {
     var dist, lat1, lat2, lon1, lon2, radlat1, radlat2, radlon1, radlon2, radtheta, theta;
@@ -82,15 +89,16 @@
     }
     return dist;
   };
-  $.whereyat = function(options) {
+  $.whereyat = function(options, completionCallback) {
     options = $.extend({}, $.whereyat.options, options);
-    return new WhereYat(options);
+    return new WhereYat(options, completionCallback);
   };
   $.whereyat.options = {
     className: '.whereyat',
     classPrefix: 'yat-',
     latitudeData: 'yatLat',
     longitudeData: 'yatLong',
+    maxDistance: 'xl',
     distances: {
       'xs': 75,
       'sm': 200,
