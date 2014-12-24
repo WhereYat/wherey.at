@@ -330,37 +330,14 @@ path.stroke-thin {
 	padding-bottom: 80px;
 	background: #3a3a3a;
 	color: #999;
-	}
-
-#f input {
-	font-size: 18px;
-	min-height: 40px;
-	border-radius: 0px;
-	line-height: 20px;
-	padding: 11px 30px 12px;
-	border: 2px solid #e9f0f2;
-	margin-bottom: 10px;
-	background-color: transparent;
-	-webkit-transition: background-color 0.2s;
-	transition: background-color 0.2s;
 }
-
-#f .subscribe-input {
-	float: left;
-	width: 70%;
-	text-align: left;
-	margin-right: 2px;
+#f img {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-#f .subscribe-submit {
-	right: 0;
-}
-
-#f .btn-yellow {
-	color: #444;
-	background-color: #ff6;
-	border-color: #444;
-	border-width: 2px;
-	font-weight: 700;
-	font-size: 20px;
+#f .icon {
+	font-size: 10em;
+	color: white;
+	line-height: 0;
 }
