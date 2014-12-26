@@ -86,8 +86,8 @@
 	};
 
 	SVGEl.prototype.showImage = function() {
-		classie.add( this.image, 'show' );
-		classie.add( this.el, 'show' );
+		$(this.image).addClass( 'show' );
+		$(this.el).addClass( 'show' );
 	};
 
 	function getViewportH() {

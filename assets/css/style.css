@@ -322,6 +322,10 @@ path.stroke-thin {
 	background: #ff6
 }
 
+#ws .mt p pre {
+	display: inline-block;
+}
+
 /* Footer Section */
 
 #f {
